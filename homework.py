@@ -10,14 +10,11 @@ class Stock:
         self.name = new_name
         self.price_per_date = {}
 
-    def add_date_price(self, date, price):
+    def add_date_price(self, date, price): #Receives any arbitrary (date, price) tuple and stores it. Works according to Current Price function asked.
         self.price_per_date[date] = price
     
     def Price(self, date): #Returns price at given date.
         return self.price_per_date.get(date, fr"Unknown price of {self.name} for {date}.")
-
-    def current_price(self, last_price, date): #Receives (?) last available price (any arbitrary price, really). I think it should return the last available price, but who am I to judge.
-        self.price_per_date[date] = last_price
 
 
 class Portfolio:
